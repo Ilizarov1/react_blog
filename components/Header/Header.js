@@ -25,6 +25,10 @@ const Header = () => (
             <FileTextOutlined />
             <Link href='/detailed'>文章</Link>
           </Menu.Item>
+          <Menu.Item key='demo'>
+            <FileTextOutlined />
+            <Link href='/demo'>Demo</Link>
+          </Menu.Item>
         </Menu>
       </Col>
     </Row>
