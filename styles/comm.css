@@ -15,3 +15,6 @@ body {
 .comm-main {
   margin-top: 0.5rem;
 }
+.title-anchor {
+  margin: 0.1rem !important;
+}
