@@ -18,13 +18,22 @@ const SVGDemo = (props) => {
       height *= 2;
     }
   }
+  function handle2PNG() {
+    const canvas = document.getElementById('canvas');
+    const data = canvas.toDataURL('image/png', 1); // 类型,图片质量
+    const a = document.createElement('a'); // 创建下载链接
+    a.href = data;
+    a.download = 'svgDemo.png';
+    a.click();
+  }
   return (
     <Fragment>
-      <Row type='flex' justify='center'>
+      <Row>
         <Image src={bytedance} alt='' id='svg' />
       </Row>
       <Row>
         <Button onClick={handleClick}>Click</Button>
+        <Button onClick={handle2PNG}>toPNG</Button>
       </Row>
       <Row>
         <canvas id='canvas' width='500' height='1000'></canvas>
