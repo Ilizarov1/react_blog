@@ -168,6 +168,11 @@
   resolved "https://registry.nlark.com/@humanwhocodes/object-schema/download/@humanwhocodes/object-schema-1.2.0.tgz?cache=0&sync_timestamp=1625263889550&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40humanwhocodes%2Fobject-schema%2Fdownload%2F%40humanwhocodes%2Fobject-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
   integrity sha1-h956+cIxgm/daKxyWPd8Qp4OX88=
 
+"@icon-park/svg@^1.3.5":
+  version "1.3.5"
+  resolved "https://registry.npmmirror.com/@icon-park/svg/download/@icon-park/svg-1.3.5.tgz#7c974f2126f81da08574b81b45d5ea8531ddf866"
+  integrity sha1-fJdPISb4HaCFdLgbRdXqhTHd+GY=
+
 "@napi-rs/triples@^1.0.3":
   version "1.0.3"
   resolved "https://registry.nlark.com/@napi-rs/triples/download/@napi-rs/triples-1.0.3.tgz#76d6d0c3f4d16013c61e45dfca5ff1e6c31ae53c"
