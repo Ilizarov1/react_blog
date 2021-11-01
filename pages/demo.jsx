@@ -1,5 +1,4 @@
 import Main from '../components/Main';
-import Image from 'next/image';
 import React from 'react';
 import bytedance from '../public/bytedance.svg';
 import { Button, Row, Slider, Col } from 'antd';
@@ -36,6 +35,33 @@ const SVGDemo = (props) => {
     a.download = 'svgDemo.png';
     a.click();
   }
+  /**
+   * 保存为png，原理是动态创建canvas标签，利用toDataURL()创建下载链接
+   * @param {object} src image
+   * @param {number} width image.width
+   * @param {number} height image.height
+   */
+
+  function convertToPng(src, width, height) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const pixelRatio = window.devicePixelRatio;
+    canvas.width = width * pixelRatio;
+    canvas.height = height * pixelRatio;
+    canvas.style.width = `${canvas.width}px`;
+    canvas.style.height = `${canvas.height}px`;
+    ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    ctx.drawImage(src, 0, 0);
+
+    const png = canvas.toDataURL('image/png', 1);
+    return Promise.resolve(png);
+    // const a = document.createElement('a');
+    // a.href = data;
+    // a.download = 'saveAsPng';
+    // a.click();
+  }
+
+  function saveAsPng(uri) {}
   /**
    * @param {number} val 滑块获得的放大倍数
    */
