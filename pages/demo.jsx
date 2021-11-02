@@ -54,14 +54,32 @@ const SVGDemo = (props) => {
     ctx.drawImage(src, 0, 0);
 
     const png = canvas.toDataURL('image/png', 1);
-    return Promise.resolve(png);
-    // const a = document.createElement('a');
-    // a.href = data;
-    // a.download = 'saveAsPng';
-    // a.click();
+
+    const a = document.createElement('a');
+    a.href = png;
+    a.download = 'saveAsPng';
+    a.click();
   }
 
-  function saveAsPng(uri) {}
+  /**
+   * 保存为png简单Demo
+   */
+  function saveAsPng() {
+    const pureSvg = svgRef.current;
+    const s = new XMLSerializer();
+    const src = s.serializeToString(pureSvg); // 对svg进行序列化，转为字符串
+    const doctype =
+      '<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [<!ENTITY nbsp "&#160;">]>';
+    const svgUri = `data:image/svg+xml;base64,${window.btoa(doctype + src)}`; // 转为base64编码的dataUri
+    const image = new Image();
+    image.onload = () => {
+      convertToPng(image, image.width, image.height);
+    };
+    image.onerror = () => {
+      console.log('image load error');
+    };
+    image.src = svgUri;
+  }
   /**
    * @param {number} val 滑块获得的放大倍数
    */
@@ -91,12 +109,6 @@ const SVGDemo = (props) => {
       ctx.stroke(p2d); // 绘制
     }
   }
-
-  function handleSvg2Str() {
-    const s = new XMLSerializer();
-    const str = s.serializeToString(svgRef.current);
-    console.log(str);
-  }
   return (
     <Fragment>
       <Row>
@@ -114,7 +126,7 @@ const SVGDemo = (props) => {
           <Button onClick={handleDraw(1)}>Draw</Button>
           <Button onClick={handle2PNG}>toPNG</Button>
           <Button onClick={handleSVGPaths}>Path2D</Button>
-          <Button onClick={handleSvg2Str}>toStr</Button>
+          <Button onClick={saveAsPng}>toPNGUri</Button>
         </Col>
         <Col span={12}>
           <Slider onChange={handleSlider} min={1} max={10} defaultValue={1} />
