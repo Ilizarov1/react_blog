@@ -1,6 +1,5 @@
 import Main from '../components/Main';
 import React from 'react';
-import bytedance from '../public/bytedance.svg';
 import { Button, Row, Slider, Col } from 'antd';
 import { Fragment } from 'react';
 const SVGDemo = (props) => {
