@@ -13,8 +13,13 @@ export default function Home() {
     },
     {
       title: 'Demo2',
-      context: '尝试带css的svg',
+      context: '对svg的属性进行简单的修改',
       href: '/demo_css'
+    },
+    {
+      title: 'LottieDemo',
+      context: '简单试用一下Lottie',
+      href: '/lottieDemo'
     }
   ]);
   return (
