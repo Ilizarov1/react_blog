@@ -19,7 +19,7 @@ const SVG_CssDemo = (props) => {
   }
 
   /**
-   * 修改svg元素的属性
+   * 简单修改svg元素的属性
    * @param {object} config svg设置
    * @param {HTMLElement} svgNode svg元素
    * @returns
