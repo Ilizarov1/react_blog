@@ -1,9 +1,6 @@
 import Main from '../components/Main';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Lottie from 'react-lottie';
-import { Button, Row, Slider, Col, Input, Select } from 'antd';
-import { Bytedance } from '@icon-park/svg';
-import { Fragment } from 'react';
 import * as LineAnimation from '../public/LineAnimation.json';
 
 const MyLottie = (props) => {

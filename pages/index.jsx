@@ -20,6 +20,11 @@ export default function Home() {
       title: 'LottieDemo',
       context: '简单试用一下Lottie',
       href: '/lottieDemo'
+    },
+    {
+      title: 'saveSvgAsPng',
+      context: '使用saveSvgAsPng库',
+      href: '/saveSvgAsPng'
     }
   ]);
   return (
